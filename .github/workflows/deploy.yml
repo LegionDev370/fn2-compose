@@ -1,0 +1,9 @@
+name: Deploy to Server
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: Starting Deploy Server
+    runs-on: echo "hello-world" > file.txt
