@@ -13,9 +13,9 @@ jobs:
       SSH_KEY: ${{secrets.SSH_PRIVATE_KEY}}
     steps:
       - name: deploy
-        run: echo "$SSH_KEY" > my_ssh_key.pem
+        run: echo "${SSH_KEY}" > my_ssh_key.pem
           chmod 600 my_ssh_key.pem
-          ssh -i my_ssh_key.pem -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST '
+          ssh -i my_ssh_key.pem -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_HOST} '
           cd /home/ubuntu/app
           git pull origin main
           sudo docker compose down
