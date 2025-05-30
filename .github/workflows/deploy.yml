@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: deploy
         run: echo "$SSH_KEY" > my_ssh_key.pem
-          chmod 400 my_ssh_key.pem
+          chmod 600 my_ssh_key.pem
           ssh -i my_ssh_key.pem -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST '
           cd /home/ubuntu/app
           git pull origin main
