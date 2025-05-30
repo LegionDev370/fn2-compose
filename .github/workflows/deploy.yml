@@ -4,6 +4,8 @@ on:
     branches:
       - main
 jobs:
-  deploy:
-    name: Starting Deploy Server
-    runs-on: echo "hello-world" > file.txt
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        uses: echo "hello-world" > file.txt
